@@ -49,50 +49,63 @@
         <button class="menu-button" onclick="toggleMenu()">Menu</button>
     </header>
 
-    <div class="menu" id="menu">
-        <ul>
-            <li>
-                <a href="home.html">Home</a> file:///C:/Users/Sebas/OneDrive/Desktop/RN%20website/home.html
-            </li>
-            <li>
-                <a href="#what-we-do">What We Do <span class="toggle-icon" onclick="toggleSubmenu(event)">+</span></a>
-                <ul class="submenu">
-                    <li><a href="missions.html">Missions</a></li> file:///C:/Users/Sebas/OneDrive/Desktop/RN%20website/missions.html
-                    <li><a href="training.html">Training</a></li> <!-- Link to Training page -->
-                    <li><a href="support.html">Support</a></li> <!-- Link to Support page -->
-                </ul>
-            </li>
-            <li>
-                <a href="#organisation">Organisation <span class="toggle-icon" onclick="toggleSubmenu(event)">+</span></a>
-                <ul class="submenu">
-                    <li><a href="hierarchy.html">Hierarchy</a></li> <!-- Link to Hierarchy page -->
-                    <li><a href="divisions.html">Divisions</a></li> <!-- Link to Divisions page -->
-                </ul>
-            </li>
-            <li>
-                <a href="#equipment">Equipment <span class="toggle-icon" onclick="toggleSubmenu(event)">+</span></a>
-                <ul class="submenu">
-                    <li><a href="ships.html">Ships</a></li> <!-- Link to Ships page -->
-                    <li><a href="weaponary.html">Weaponry</a></li> <!-- Link to Weaponry page -->
-                </ul>
-            </li>
-            <li>
-                <a href="locations.html">Locations & Operations</a> <!-- Link to Locations page -->
-            </li>
-            <li>
-                <a href="careers.html">Careers</a> file:///C:/Users/Sebas/OneDrive/Desktop/RN%20website/careers.html
-            </li>
-            <li>
-                <a href="families.html">Families & Veterans</a> <!-- Link to Families & Veterans page -->
-            </li>
-            <li>
-                <a href="events.html">Events</a> <!-- Link to Events page -->
-            </li>
-            <li>
-                <a href="news.html">News</a> <!-- Link to News page -->
-            </li>
-        </ul>
-    </div>
+<div class="menu" id="menu">
+    <ul>
+        <li>
+            <button onclick="location.href='home.html'">Home</button> <!-- Button to go to Home page -->
+        </li>
+        <li>
+            <button onclick="toggleSubmenu(event)">What We Do <span class="toggle-icon">+</span></button>
+            <ul class="submenu">
+                <li><button onclick="location.href='missions.html'">Missions</button></li> <!-- Button to go to Missions page -->
+                <li><button onclick="location.href='training.html'">Training</button></li> <!-- Button to go to Training page -->
+                <li><button onclick="location.href='support.html'">Support</button></li> <!-- Button to go to Support page -->
+            </ul>
+        </li>
+        <li>
+            <button onclick="toggleSubmenu(event)">Organisation <span class="toggle-icon">+</span></button>
+            <ul class="submenu">
+                <li><button onclick="location.href='hierarchy.html'">Hierarchy</button></li> <!-- Button to go to Hierarchy page -->
+                <li><button onclick="location.href='divisions.html'">Divisions</button></li> <!-- Button to go to Divisions page -->
+            </ul>
+        </li>
+        <li>
+            <button onclick="toggleSubmenu(event)">Equipment <span class="toggle-icon">+</span></button>
+            <ul class="submenu">
+                <li><button onclick="location.href='ships.html'">Ships</button></li> <!-- Button to go to Ships page -->
+                <li><button onclick="location.href='weaponary.html'">Weaponry</button></li> <!-- Button to go to Weaponry page -->
+            </ul>
+        </li>
+        <li>
+            <button onclick="location.href='locations.html'">Locations & Operations</button> <!-- Button to go to Locations page -->
+        </li>
+        <li>
+            <button onclick="location.href='careers.html'">Careers</button> <!-- Button to go to Careers page -->
+        </li>
+        <li>
+            <button onclick="location.href='families.html'">Families & Veterans</button> <!-- Button to go to Families & Veterans page -->
+        </li>
+        <li>
+            <button onclick="location.href='events.html'">Events</button> <!-- Button to go to Events page -->
+        </li>
+        <li>
+            <button onclick="location.href='news.html'">News</button> <!-- Button to go to News page -->
+        </li>
+    </ul>
+</div>
+
+<script>
+    function toggleSubmenu(event) {
+        event.stopPropagation();  // Prevent the click event from propagating to parent elements
+        const submenu = event.target.closest('li').querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'; // Toggle submenu visibility
+            const toggleIcon = event.target.querySelector('.toggle-icon');
+            toggleIcon.textContent = submenu.style.display === 'block' ? '−' : '+'; // Change toggle icon
+        }
+    }
+</script>
+
     
 
     <section class="careers-section">
